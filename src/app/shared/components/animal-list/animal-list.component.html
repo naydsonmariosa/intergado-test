@@ -1,0 +1,28 @@
+<div class="container" >
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Cadastrar Animal</span>
+        <app-animal-create (afterCreate)="_onGetNewAnimal($event)"></app-animal-create>
+        <ul class="collection">
+          <li class="collection-header">
+          </li>
+          <li class="collection-item avatar" *ngFor="let animal of animals">
+            <div>
+              <img src="../../../../assets/images/svg/zoology.svg" class="circle">
+              <span class="title">{{animal.manejo}}</span>
+              <p>{{animal.tag}}</p>
+              <a role="button" (click)="deleteAnimal(animal.id)" class="secondary-content" style="cursor: pointer;">
+                <i class="material-icons red-text">delete</i>
+              </a>
+            </div>
+          </li>
+          <li class="collection-item" *ngIf="animals.length == 0">
+            Nenhum animal encontrado
+          </li>
+        </ul>
+      </div>    
+    </div>
+  </div> 
+</div>
+

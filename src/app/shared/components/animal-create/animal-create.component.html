@@ -1,0 +1,25 @@
+<div class="row">
+  <form [formGroup]="form">
+    <div class="input-field col s12">
+      <input [(ngModel)]="animal.manejo" formControlName="manejo" placeholder="" id="manejo" type="text" class="validate" required>
+      <label for="manejo">Manejo</label>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <div class="input-field col s12">
+          <input [(ngModel)]="animal.tag" formControlName="tag" placeholder="" id="tag" type="text" class="validate" required #tag>
+          <label for="tag">Tag</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <div class="input-field inline">
+          <button #save id="save" class="btn" (click)="createAnimal()">Cadastrar
+            <i class="material-icons right">done</i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
